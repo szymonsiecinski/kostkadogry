@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">KostkaDoGry</string>
+    <string name="action_settings">Ustawienia</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="wylosowana_liczba">Wylosowana liczba</string>
+    <string name="losuj_button">Losuj</string>
+    <string name="title_activity_ustawienia">Ustawienia</string>
+
+</resources>
