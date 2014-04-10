@@ -2,10 +2,31 @@
 <resources>
 
     <string name="app_name">KostkaDoGry</string>
-    <string name="action_settings">Ustawienia</string>
     <string name="hello_world">Hello world!</string>
-    <string name="wylosowana_liczba">Wylosowana liczba</string>
-    <string name="losuj_button">Losuj</string>
-    <string name="title_activity_ustawienia">Ustawienia</string>
+    <string name="action_settings">Ustawienia</string>
+    <string name="action_help">Pomoc</string>
+    <string name="action_about">O programie</string>
+    <string-array name="rodzaje_kostek">
+        <item >3</item>
+        <item >4</item>
+        <item >5</item>
+        <item >6</item>
+        <item >7</item>
+        <item >8</item>
+        <item >10</item>
+        <item >12</item>
+        <item >14</item>
+        <item >16</item>
+        <item >20</item>
+        <item >24</item>
+        <item >30</item>
+        <item >48</item>
+    </string-array>
+    <string name="label_wartosci">Wylosowane wartości:</string>
+    <string name="button_losuj">Losuj</string>
+    <string name="button_usun">Usuń kostkę</string>
+    <string name="button_dodaj">Dodaj kostkę</string>
+    <string name="title_set">Ustaw</string>
+    <string name="title_die_sort">Liczba ścian:</string>
 
 </resources>
