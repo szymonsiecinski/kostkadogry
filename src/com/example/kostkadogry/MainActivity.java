@@ -8,6 +8,7 @@ import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.app.Activity;
+import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.view.Menu;
@@ -24,8 +25,18 @@ public class MainActivity extends Activity implements SensorEventListener {
     private int _nrKostkiDoPokazania = 1, _nrKostkiDoUstawienia=0;
     
     private SensorManager mSensorManager;
+    /**
+     * Uchwyt do akcelerometru
+     */
     private Sensor mAccelerometer;
+    /**
+     * Odczytane wartości przyspieszeń
+     */
     private float Gx, Gy, Gz;
+    
+    /**
+     * Próg szumu akcelerometru
+     */
     private final float NOISE = 3.0f;
     
     private ArrayList<KontrolerKostka> obiektyKostki = new ArrayList<KontrolerKostka>();
@@ -33,6 +44,10 @@ public class MainActivity extends Activity implements SensorEventListener {
     private ArrayList<ImageView> kostkiObraz = new ArrayList<ImageView>();
     private ArrayList<TextView> kostkiZakres = new ArrayList<TextView>();
     
+    /**
+     * Funkcja odpowiada za obsługę uruchomienia programu.
+     * @param	Stan instancji klasy (programu)
+     */
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -41,10 +56,9 @@ public class MainActivity extends Activity implements SensorEventListener {
 		btnLosuj = (Button) this.findViewById(R.id.buttonLosuj);
 
 		mSensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
-		mAccelerometer = mSensorManager
-				.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
+		mAccelerometer = mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
 
-		if (mAccelerometer.equals(null)) {
+		if (mAccelerometer == null) {
 			btnLosuj.setVisibility(View.VISIBLE);
 		} else {
 			btnLosuj.setVisibility(View.INVISIBLE);
@@ -81,6 +95,11 @@ public class MainActivity extends Activity implements SensorEventListener {
 		}
 	}
 
+	/**
+	 * Tworzy menu programu i wyświetla je na żądanie użytkownika.
+	 * @param menu	Menu programu
+	 * @return	Wartość <code>true</code>
+	 */
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
@@ -88,24 +107,32 @@ public class MainActivity extends Activity implements SensorEventListener {
 		return true;
 	}
     
-    /* 
-     * Wybór opcji w menu
-     * */
+	//Wybór opcji w menu
+	/**
+	 * Funkcja obsługuje zdarzenie wybrania pozycji w menu aplikacji.
+	 * Wybranie pozycji w menu skutkuje uruchomieniem wskazanego okna (widoku).
+	 * @param item	Pozycja w menu
+	 * @return	Stwierdzenie wyboru opcji
+	 */
     @Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
 		case R.id.action_help:
-
-			//Intent intent = new Intent(this, Ustawienia.class);
-			//this.startActivityForResult(intent, 1);
+			Intent intent_help = new Intent(this, Help.class);
+			this.startActivity(intent_help);
 			return true;
 		case R.id.action_about:
+			Intent intent_about = new Intent(this, About.class);
+			this.startActivity(intent_about);
 			return true;
 		default:
 			return false;
 		}
 	}
     
+    /**
+     * Obsługuje zdarzenie ponownego uruchomienia programu.
+     */
     //podczas wznawiania
     @Override
     protected void onResume() {
@@ -113,6 +140,9 @@ public class MainActivity extends Activity implements SensorEventListener {
       mSensorManager.registerListener(this, mAccelerometer, SensorManager.SENSOR_DELAY_NORMAL);
     }
   
+    /**
+     * Obsługuje zdarzenie przejścia programu do działania w tle.
+     */
     //podczas pauzowania
     @Override
     protected void onPause() {
@@ -120,6 +150,13 @@ public class MainActivity extends Activity implements SensorEventListener {
       mSensorManager.unregisterListener(this);
     }
     
+    /**
+     * Obsługuje zdarzenie zatwierdzenia ustawień w oknie Ustawienia. Skutkiem jest ustawienie liczby ścian (rodzaju kostki)
+     * wybranej przez użytkownika kostki do gry oraz przekazanie informacji o zakresie losowanych liczb.
+     * @param requestCode	Kod żądania
+     * @param resultCode	Kod odpowiedzi
+     * @param data	Dane z okna Ustawienia
+     */
     //ustawiamy kostke
 	@Override
 	public void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -144,6 +181,11 @@ public class MainActivity extends Activity implements SensorEventListener {
 		}
 	}
     
+	/**
+	 * Zamienia liczbę ścian na rodzaj kostki.
+	 * @param liczba	Liczba ścian
+	 * @return	Obiekt klasy/typu wyliczeniowego Kostka.RodzajKostki
+	 */
     private Kostka.RodzajKostki liczbaNaRodzajKostki(int liczba)
     {
 		switch (liczba) {
@@ -179,12 +221,18 @@ public class MainActivity extends Activity implements SensorEventListener {
 		}
     }
 
-
+    /**
+     * Obsługuje zdarzenie naciśnięcia na przycisk „Losuj”.
+     * @param view	Bieżący widok (okno) programu
+     */
     //klikniecie przycisku losuj
 	public void onButtonClick(View view) {
 		losujLiczbe();
 	}
     
+	/**
+	 * Losuje liczby na kostkach i pokazuje wyniki w postaci obrazów ścian z wartościami wylosowanych liczb.
+	 */
 	public void losujLiczbe() {
 			for (int i = 0; i < kostkiText.size(); i++) {
 				obiektyKostki.get(i).losujLiczbe();
@@ -195,11 +243,22 @@ public class MainActivity extends Activity implements SensorEventListener {
 			}
 	}
 
+	/**
+	 * Obsługuje zdarzenie zmiany dokładności czujnika.
+	 * @param sensor	Rodzaj czujnika
+	 * @param accuracy	Dokładność
+	 */
     @Override
     public void onAccuracyChanged(Sensor sensor, int accuracy) {
 	// TODO Auto-generated method stub
     }
 
+    /**
+     * Obsługuje zdarzenie zmiany stanu akcelerometru.
+     * Losowanie liczby zostanie wywołane, jeżeli bieżące wartości przyspieszeń w osiach
+     * X, Y, Z będą większe niż wartość zmiennej NOISE.
+     * @param event	Zdarzenie związane z czujnikiem
+     */
 	@Override
 	public void onSensorChanged(SensorEvent event) {
 
@@ -223,6 +282,12 @@ public class MainActivity extends Activity implements SensorEventListener {
 		}
 	}
 	
+	/**
+	 * Obsługuje procedurę dodawania kostek.
+	 * Dodanie kostki skutkuje odsłonięciem wartości liczbowej, zakresu liczb i ilustracji przedstawiającej
+	 * wartość na kostce oraz wyświetleniem komunikatu dla użytkownika.
+	 * @param view	Bieżący widok (okno) programu.
+	 */
 	//dodaj kostke
 	public void onAddDie(View view)
 	{
@@ -240,6 +305,12 @@ public class MainActivity extends Activity implements SensorEventListener {
 		//else _nrKostkiDoPokazania = 1;
 	}
 	
+	/**
+	 * Obsługuje procedurę usuwania kostek.
+	 * Dodanie kostki skutkuje zasłonięciem wartości liczbowej, zakresu liczb i ilustracji przedstawiającej
+	 * wartość na kostce oraz wyświetleniem komunikatu dla użytkownika.
+	 * @param view	Bieżący widok (okno) programu.
+	 */
 	// usun kostke
 	public void onRemoveDie(View view) {
 
@@ -258,6 +329,11 @@ public class MainActivity extends Activity implements SensorEventListener {
 		} //else _nrKostkiDoPokazania = 1;
 	}
 	
+	/**
+	 * Obsługuje zdarzenie naciśnięcia na kostkę.
+	 * Skutkiem jest wywołanie okna (widoku) Ustawienia, w którym użykownik może zmienić rodzaj kostki.
+	 * @param view	Bieżący widok (okno) programu.
+	 */
 	//Ustawienie kostki
 	public void DieChange(View view)
 	{

@@ -6,27 +6,45 @@
     <string name="action_settings">Ustawienia</string>
     <string name="action_help">Pomoc</string>
     <string name="action_about">O programie</string>
+
     <string-array name="rodzaje_kostek">
-        <item >3</item>
-        <item >4</item>
-        <item >5</item>
-        <item >6</item>
-        <item >7</item>
-        <item >8</item>
-        <item >10</item>
-        <item >12</item>
-        <item >14</item>
-        <item >16</item>
-        <item >20</item>
-        <item >24</item>
-        <item >30</item>
-        <item >48</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>10</item>
+        <item>12</item>
+        <item>14</item>
+        <item>16</item>
+        <item>20</item>
+        <item>24</item>
+        <item>30</item>
+        <item>48</item>
     </string-array>
+
     <string name="label_wartosci">Wylosowane wartości:</string>
     <string name="button_losuj">Losuj</string>
     <string name="button_usun">Usuń kostkę</string>
     <string name="button_dodaj">Dodaj kostkę</string>
     <string name="title_set">Ustaw</string>
     <string name="title_die_sort">Liczba ścian:</string>
+    <string name="title_activity_about">O programie</string>
+    <string name="copyright">© 2014 Szymon Sieciński</string>
+    <string name="license">Niniejszy program rozpowszechniany jest BEZ JAKIEJKOLWIEK GWARANCJI,
+        na licencji GNU LGPL w wersji 3 i późniejszej.</string>
+    <string name="title_activity_help">Pomoc</string>
+    <string name="help_title">Skrócona instrukcja obsługi:</string>
+    <string name="help_text">1. Aby wylosować liczbę, potrząśnij telefonem lub naciśnij przycisk „Losuj”.\n
+        Liczba zostanie pokazana w postaci liczbowej i ściany kostki.\n
+        2. Aby zmienić rodzaj kostki, dotknij kostkę. Zostaniesz przekierowany do ustawień kostki.\n
+        3. Z listy wybierz liczbę ścian kostki i zatwierdź przyciskiem „Ustaw”. Zakres liczb zostanie pokazany
+        pod wylosowaną wartością liczbową.\n
+        4. Przyciskiem „Dodaj kostkę” dodajesz kostkę,\n
+        a przyciskiem „Usuń kostkę” usuwasz kostkę.\n
+        5. Aby wyjść z programu, naciśnij przycisk WSTECZ na telefonie.
+        </string>
+        <string name="text_ok">OK</string>
 
 </resources>

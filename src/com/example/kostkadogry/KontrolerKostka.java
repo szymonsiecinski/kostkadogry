@@ -1,16 +1,32 @@
 package com.example.kostkadogry;
 
+/**
+ * Zapewnia wizualizację wyników rzutu kostką, której zachowanie zostało zdefiniowane w klasie Kostka.
+ * 
+ * @see Kostka
+ * @author Szymon Sieciński
+ */
 public class KontrolerKostka extends Kostka {
 	
+	/**
+	 * Tworzy obiekt klasy KontrolerKostka z domyślnymi parametrami (kostka 6-ścienna).
+	 * @see Kostka()
+	 */
 	public KontrolerKostka() {
 		// TODO Auto-generated constructor stub
 	}
 
+	/**
+	 * Tworzy obiekt klasy Kostka o danym rodzaju.
+	 * @param rodzaj	Rodzaj kostki (liczba ścian kostki)
+	 * @see Kostka(RodzajKostki rodzaj)
+	 * @see RodzajKostki
+	 */
 	public KontrolerKostka(RodzajKostki rodzaj) {
 		super(rodzaj);
 	}
 	
-	public static int getIdStanuNieustalonego(RodzajKostki k) {
+	/*public static int getIdStanuNieustalonego(RodzajKostki k) {
 		int rodzaj = k.getValue();
 
 		switch (rodzaj) {
@@ -45,8 +61,12 @@ public class KontrolerKostka extends Kostka {
 		default:
 			return R.drawable.k6_roll;
 		}
-	}
+	}*/
 	
+	/**
+	 * Funkcja zwraca wygenerowany z zasobów aplikacji ID obrazu odpowiadającego wylosowanej wartości.
+	 * @return ID obrazu
+	 */
 	public int getIdObrazu() {
 		int rodzaj = this.getRodzajKostki().getValue();
 		int liczba = this.getLiczba();
@@ -85,6 +105,11 @@ public class KontrolerKostka extends Kostka {
 		}
 	}
 
+	/**
+	 * Funkcja zwraca wygenerowany z zasobów aplikacji ID obrazu odpowiadającego wylosowanej wartości dla kości K3.
+	 * @param wartosc	Wartość liczbowa
+	 * @return ID obrazu
+	 */
 	private int kosciK3(int wartosc) {
 		switch (wartosc) {
 		case 1:
@@ -97,6 +122,11 @@ public class KontrolerKostka extends Kostka {
 		}
 	}
 	
+	/**
+	 * Funkcja zwraca wygenerowany z zasobów aplikacji ID obrazu odpowiadającego wylosowanej wartości dla kości K4.
+	 * @param wartosc	Wartość liczbowa
+	 * @return ID obrazu
+	 */
 	private int kosciK4(int wartosc) {
 		switch (wartosc) {
 		case 1:
@@ -111,6 +141,11 @@ public class KontrolerKostka extends Kostka {
 		}
 	}
 	
+	/**
+	 * Funkcja zwraca wygenerowany z zasobów aplikacji ID obrazu odpowiadającego wylosowanej wartości dla kości K5.
+	 * @param wartosc	Wartość liczbowa
+	 * @return ID obrazu
+	 */
 	private int kosciK5(int wartosc) {
 		switch (wartosc) {
 		case 1:
@@ -127,6 +162,11 @@ public class KontrolerKostka extends Kostka {
 		}
 	}
 	
+	/**
+	 * Funkcja zwraca wygenerowany z zasobów aplikacji ID obrazu odpowiadającego wylosowanej wartości dla kości K6.
+	 * @param wartosc	Wartość liczbowa
+	 * @return ID obrazu
+	 */
 	private int kosciK6(int wartosc) {
 		switch (wartosc) {
 		case 1:
@@ -145,6 +185,11 @@ public class KontrolerKostka extends Kostka {
 		}
 	}
 	
+	/**
+	 * Funkcja zwraca wygenerowany z zasobów aplikacji ID obrazu odpowiadającego wylosowanej wartości dla kości K7.
+	 * @param wartosc	Wartość liczbowa
+	 * @return ID obrazu
+	 */
 	private int kosciK7(int wartosc) {
 		switch (wartosc) {
 		case 1:
@@ -165,6 +210,11 @@ public class KontrolerKostka extends Kostka {
 		}
 	}
 	
+	/**
+	 * Funkcja zwraca wygenerowany z zasobów aplikacji ID obrazu odpowiadającego wylosowanej wartości dla kości K8.
+	 * @param wartosc	Wartość liczbowa
+	 * @return ID obrazu
+	 */
 	private int kosciK8(int wartosc) {
 		switch (wartosc) {
 		case 1:
@@ -187,6 +237,11 @@ public class KontrolerKostka extends Kostka {
 		}
 	}
 	
+	/**
+	 * Funkcja zwraca wygenerowany z zasobów aplikacji ID obrazu odpowiadającego wylosowanej wartości dla kości K10.
+	 * @param wartosc	Wartość liczbowa
+	 * @return ID obrazu
+	 */
 	private int kosciK10(int wartosc) {
 		switch (wartosc) {
 		case 0:
@@ -213,6 +268,11 @@ public class KontrolerKostka extends Kostka {
 		}
 	}
 	
+	/**
+	 * Funkcja zwraca wygenerowany z zasobów aplikacji ID obrazu odpowiadającego wylosowanej wartości dla kości K12.
+	 * @param wartosc	Wartość liczbowa
+	 * @return ID obrazu
+	 */
 	private int kosciK12(int wartosc) {
 		switch (wartosc) {
 		case 1:
@@ -243,6 +303,11 @@ public class KontrolerKostka extends Kostka {
 		}
 	}
 	
+	/**
+	 * Funkcja zwraca wygenerowany z zasobów aplikacji ID obrazu odpowiadającego wylosowanej wartości dla kości K14.
+	 * @param wartosc	Wartość liczbowa
+	 * @return ID obrazu
+	 */
 	private int kosciK14(int wartosc) {
 		switch (wartosc) {
 		case 1:
@@ -277,6 +342,11 @@ public class KontrolerKostka extends Kostka {
 		}
 	}
 	
+	/**
+	 * Funkcja zwraca wygenerowany z zasobów aplikacji ID obrazu odpowiadającego wylosowanej wartości dla kości K16.
+	 * @param wartosc	Wartość liczbowa
+	 * @return ID obrazu
+	 */
 	private int kosciK16(int wartosc) {
 		switch (wartosc) {
 		case 1:
@@ -315,6 +385,11 @@ public class KontrolerKostka extends Kostka {
 		}
 	}
 	
+	/**
+	 * Funkcja zwraca wygenerowany z zasobów aplikacji ID obrazu odpowiadającego wylosowanej wartości dla kości K20.
+	 * @param wartosc	Wartość liczbowa
+	 * @return ID obrazu
+	 */
 	private int kosciK20(int wartosc) {
 		switch (wartosc) {
 		case 1:
@@ -361,6 +436,11 @@ public class KontrolerKostka extends Kostka {
 		}
 	}
 	
+	/**
+	 * Funkcja zwraca wygenerowany z zasobów aplikacji ID obrazu odpowiadającego wylosowanej wartości dla kości K24.
+	 * @param wartosc	Wartość liczbowa
+	 * @return ID obrazu
+	 */
 	private int kosciK24(int wartosc) {
 		switch (wartosc) {
 		case 1:
@@ -415,6 +495,11 @@ public class KontrolerKostka extends Kostka {
 		}
 	}
 	
+	/**
+	 * Funkcja zwraca wygenerowany z zasobów aplikacji ID obrazu odpowiadającego wylosowanej wartości dla kości K30.
+	 * @param wartosc	Wartość liczbowa
+	 * @return ID obrazu
+	 */
 	private int kosciK30(int wartosc) {
 		switch (wartosc) {
 		case 1:
@@ -481,6 +566,11 @@ public class KontrolerKostka extends Kostka {
 		}
 	}
 	
+	/**
+	 * Funkcja zwraca wygenerowany z zasobów aplikacji ID obrazu odpowiadającego wylosowanej wartości dla kości K48.
+	 * @param wartosc	Wartość liczbowa
+	 * @return ID obrazu
+	 */
 	private int kosciK48(int wartosc) {
 		switch (wartosc) {
 		case 1:
