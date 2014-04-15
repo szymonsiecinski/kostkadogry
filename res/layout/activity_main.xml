@@ -27,7 +27,6 @@
         android:layout_alignLeft="@+id/btnDodaj"
         android:layout_below="@+id/txtOpis"
         android:layout_marginTop="28dp"
-        android:text="1"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <TextView
@@ -37,7 +36,6 @@
         android:layout_above="@+id/btnUsun"
         android:layout_alignLeft="@+id/btnDodaj"
         android:layout_marginBottom="39dp"
-        android:text="5"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:visibility="invisible" />
 
@@ -76,7 +74,7 @@
         android:layout_alignTop="@+id/imgKostka1"
         android:clickable="true"
         android:onClick="DieChange"
-        android:src="@drawable/ic_launcher"
+        android:src="@drawable/k6_1"
         android:visibility="invisible" />
 
     <TextView
@@ -85,7 +83,6 @@
         android:layout_height="wrap_content"
         android:layout_alignRight="@+id/txtOpis"
         android:layout_alignTop="@+id/imgKostka2"
-        android:text="2"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:visibility="invisible" />
 
@@ -96,7 +93,6 @@
         android:layout_alignLeft="@+id/txtLiczba2"
         android:layout_below="@+id/imgKostka2"
         android:layout_marginTop="25dp"
-        android:text="4"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:visibility="invisible" />
 
@@ -108,7 +104,7 @@
         android:layout_alignTop="@+id/txtLiczba4"
         android:clickable="true"
         android:onClick="DieChange"
-        android:src="@drawable/ic_launcher"
+        android:src="@drawable/k6_1"
         android:visibility="invisible" />
 
     <ImageView
@@ -119,7 +115,7 @@
         android:layout_alignTop="@+id/txtLiczba4"
         android:clickable="true"
         android:onClick="DieChange"
-        android:src="@drawable/ic_launcher"
+        android:src="@drawable/k6_1"
         android:visibility="invisible" />
 
     <ImageView
@@ -130,7 +126,7 @@
         android:layout_alignTop="@+id/txtLiczba1"
         android:clickable="true"
         android:onClick="DieChange"
-        android:src="@drawable/ic_launcher" />
+        android:src="@drawable/k6_1" />
 
     <TextView
         android:id="@+id/txtLiczba3"
@@ -138,7 +134,6 @@
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/txtLiczba1"
         android:layout_alignTop="@+id/imgKostka3"
-        android:text="3"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:visibility="invisible" />
 
@@ -150,7 +145,7 @@
         android:layout_alignTop="@+id/txtLiczba5"
         android:clickable="true"
         android:onClick="DieChange"
-        android:src="@drawable/ic_launcher"
+        android:src="@drawable/k6_1"
         android:visibility="invisible" />
 
     <TextView
@@ -159,7 +154,6 @@
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/txtLiczba4"
         android:layout_alignTop="@+id/imgKostka5"
-        android:text="6"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:visibility="invisible" />
 
@@ -171,7 +165,7 @@
         android:layout_alignTop="@+id/txtLiczba6"
         android:clickable="true"
         android:onClick="DieChange"
-        android:src="@drawable/ic_launcher"
+        android:src="@drawable/k6_1"
         android:visibility="invisible" />
 
     <TextView

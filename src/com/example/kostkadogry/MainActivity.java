@@ -8,7 +8,6 @@ import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.app.Activity;
-import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.view.Menu;
@@ -39,7 +38,7 @@ public class MainActivity extends Activity implements SensorEventListener {
      */
     private final float NOISE = 3.0f;
     
-    private ArrayList<KontrolerKostka> obiektyKostki = new ArrayList<KontrolerKostka>();
+    private ArrayList<KontrolerKostki> obiektyKostki = new ArrayList<KontrolerKostki>();
     private ArrayList<TextView> kostkiText = new ArrayList<TextView>();
     private ArrayList<ImageView> kostkiObraz = new ArrayList<ImageView>();
     private ArrayList<TextView> kostkiZakres = new ArrayList<TextView>();
@@ -91,7 +90,7 @@ public class MainActivity extends Activity implements SensorEventListener {
 		//obiekty klasa kostka
 		for(int i = 0; i<kostkiText.size(); i++)
 		{
-			obiektyKostki.add(new KontrolerKostka());
+			obiektyKostki.add(new KontrolerKostki());
 		}
 	}
 

@@ -1,13 +1,17 @@
 package com.example.kostkadogry;
 
+import java.io.IOException;
+
 import android.support.v7.app.ActionBarActivity;
 import android.support.v4.app.Fragment;
+import android.text.method.ScrollingMovementMethod;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 public class About extends ActionBarActivity {
 
@@ -77,6 +81,35 @@ public class About extends ActionBarActivity {
 	public void btnOKClicked(View view)
 	{
 		this.finish();
+	}
+	
+	/**
+	 * Obsługuje zdarzenie wciśnięcia przycisku Licencja - wyświetla licencję programu.
+	 * @param view	Bieżący widok
+	 */
+	public void btnLicenseClicked(View view)
+	{
+		//Otwiera plik licencji
+		java.io.InputStream plik_licencji = this.getResources().openRawResource(R.raw.lgpl3);
+		byte[] bajty;
+		String text_licencji="";
+		
+		try {
+			bajty = new byte[plik_licencji.available()];
+			plik_licencji.read(bajty);
+			plik_licencji.close();
+
+			text_licencji = new String(bajty, "UTF-8");
+			
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+        //return new String(bytes,"UTF-8");
+		
+		TextView glownyText = (TextView)this.findViewById(R.id.textView3);
+		glownyText.setMovementMethod(new ScrollingMovementMethod());
+		glownyText.setText(text_licencji);
 	}
 
 	/**
