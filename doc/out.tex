@@ -1,0 +1,1359 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{color}
+\usepackage{ifthen}
+\usepackage{ifpdf}
+\usepackage[headings]{fullpage}
+\ifpdf \usepackage[pdftex, pdfpagemode={UseOutlines},bookmarks,colorlinks,linkcolor={blue},plainpages=false,pdfpagelabels,citecolor={red},breaklinks=true]{hyperref}
+  \usepackage[pdftex]{graphicx}
+  \pdfcompresslevel=9
+  \DeclareGraphicsRule{*}{mps}{*}{}
+\else
+  \usepackage[dvips]{graphicx}
+\fi
+
+\newcommand{\entityintro}[3]{%
+  \hbox to \hsize{%
+    \vbox{%
+      \hbox to .2in{}%
+    }%
+    {\bf  #1}%
+    \dotfill\pageref{#2}%
+  }
+  \makebox[\hsize]{%
+    \parbox{.4in}{}%
+    \parbox[l]{5in}{%
+      \vspace{1mm}%
+      #3%
+      \vspace{1mm}%
+    }%
+  }%
+}
+\newcommand{\refdefined}[1]{
+\expandafter\ifx\csname r@#1\endcsname\relax
+\relax\else
+{$($in \ref{#1}, page \pageref{#1}$)$}\fi}
+\date{\today}
+\title{KostkaDoGry}
+\author{Szymon Sieciński}
+\chardef\textbackslash=`\\
+\begin{document}
+\maketitle
+\sloppy
+\addtocontents{toc}{\protect\markboth{Contents}{Contents}}
+\tableofcontents
+\section*{Class Hierarchy}{
+\thispagestyle{empty}
+\markboth{Class Hierarchy}{Class Hierarchy}
+\addcontentsline{toc}{section}{Class Hierarchy}
+\subsection*{Classes}
+{\raggedright
+\hspace{0.0cm} $\bullet$ java.lang.Object {\tiny \refdefined{java.lang.Object}} \\
+\hspace{1.0cm} $\bullet$ ActionBarActivity {\tiny } \\
+\hspace{2.0cm} $\bullet$ com.example.kostkadogry.About {\tiny \refdefined{com.example.kostkadogry.About}} \\
+\hspace{2.0cm} $\bullet$ com.example.kostkadogry.Help {\tiny \refdefined{com.example.kostkadogry.Help}} \\
+\hspace{1.0cm} $\bullet$ Activity {\tiny } \\
+\hspace{2.0cm} $\bullet$ com.example.kostkadogry.MainActivity {\tiny \refdefined{com.example.kostkadogry.MainActivity}} \\
+\hspace{2.0cm} $\bullet$ com.example.kostkadogry.Ustawienia {\tiny \refdefined{com.example.kostkadogry.Ustawienia}} \\
+\hspace{1.0cm} $\bullet$ Fragment {\tiny } \\
+\hspace{2.0cm} $\bullet$ com.example.kostkadogry.About.PlaceholderFragment {\tiny \refdefined{com.example.kostkadogry.About.PlaceholderFragment}} \\
+\hspace{2.0cm} $\bullet$ com.example.kostkadogry.Help.PlaceholderFragment {\tiny \refdefined{com.example.kostkadogry.Help.PlaceholderFragment}} \\
+\hspace{1.0cm} $\bullet$ com.example.kostkadogry.Kostka {\tiny \refdefined{com.example.kostkadogry.Kostka}} \\
+\hspace{2.0cm} $\bullet$ com.example.kostkadogry.KontrolerKostki {\tiny \refdefined{com.example.kostkadogry.KontrolerKostki}} \\
+\hspace{1.0cm} $\bullet$ java.lang.Enum {\tiny \refdefined{java.lang.Enum}} \\
+\hspace{2.0cm} $\bullet$ com.example.kostkadogry.Kostka.RodzajKostki {\tiny \refdefined{com.example.kostkadogry.Kostka.RodzajKostki}} \\
+}
+}
+\section{Package com.example.kostkadogry}{
+\label{com.example.kostkadogry}\hypertarget{com.example.kostkadogry}{}
+\hskip -.05in
+\hbox to \hsize{\textit{ Package Contents\hfil Page}}
+\vskip .13in
+\hbox{{\bf  Classes}}
+\entityintro{About}{com.example.kostkadogry.About}{Klasa implementuje zachowanie okna informacji o programie.}
+\entityintro{About.PlaceholderFragment}{com.example.kostkadogry.About.PlaceholderFragment}{Widok okna pomocy.}
+\entityintro{Help}{com.example.kostkadogry.Help}{Klasa implementuje zachowanie aktywności Pomoc - wyświetla skróconą\phantom{ }instrukcję obsługi aplikacji.}
+\entityintro{Help.PlaceholderFragment}{com.example.kostkadogry.Help.PlaceholderFragment}{Widok okna pomocy.}
+\entityintro{KontrolerKostki}{com.example.kostkadogry.KontrolerKostki}{Zapewnia wizualizację wyników rzutu kostką, której zachowanie zostało zdefiniowane w klasie Kostka.}
+\entityintro{Kostka}{com.example.kostkadogry.Kostka}{Klasa implementująca mechanizm kostki do gry}
+\entityintro{Kostka.RodzajKostki}{com.example.kostkadogry.Kostka.RodzajKostki}{Typ wyliczeniowy implementujący rodzaj kostki do gry.}
+\entityintro{MainActivity}{com.example.kostkadogry.MainActivity}{Klasa implementująca zachowanie głównej aktywności (okna) programu.}
+\entityintro{Ustawienia}{com.example.kostkadogry.Ustawienia}{Klasa implementująca widok ustawień.}
+\vskip .1in
+\vskip .1in
+\subsection{\label{com.example.kostkadogry.About}Class About}{
+\hypertarget{com.example.kostkadogry.About}{}\vskip .1in 
+Klasa implementuje zachowanie okna informacji o programie.\vskip .1in 
+\subsubsection{Declaration}{
+\small public class About
+\\ {\bf  extends} ActionBarActivity
+\refdefined{.ActionBarActivity}}
+\subsubsection{Constructor summary}{
+\begin{verse}
+\hyperlink{com.example.kostkadogry.About()}{{\bf About()}} \\
+\end{verse}
+}
+\subsubsection{Method summary}{
+\begin{verse}
+\hyperlink{com.example.kostkadogry.About.btnLicenseClicked(View)}{{\bf btnLicenseClicked(View)}} Obsługuje zdarzenie wciśnięcia przycisku Licencja - wyświetla licencję programu.\\
+\hyperlink{com.example.kostkadogry.About.btnOKClicked(View)}{{\bf btnOKClicked(View)}} Obsługuje zdarzenie wciśnięcia przycisku OK.\\
+\hyperlink{com.example.kostkadogry.About.onCreate(Bundle)}{{\bf onCreate(Bundle)}} Funkcja odpowiada za obsługę uruchomienia programu.\\
+\hyperlink{com.example.kostkadogry.About.onCreateOptionsMenu(Menu)}{{\bf onCreateOptionsMenu(Menu)}} Dodaje do menu okna opcje menu.\\
+\hyperlink{com.example.kostkadogry.About.onOptionsItemSelected(MenuItem)}{{\bf onOptionsItemSelected(MenuItem)}} Funkcja obsługuje zdarzenie wybrania pozycji w menu okna.\\
+\hyperlink{com.example.kostkadogry.About.onPrepareOptionsMenu(Menu)}{{\bf onPrepareOptionsMenu(Menu)}} Obsługuje zdarzenie tworzenia menu okna.\\
+\end{verse}
+}
+\subsubsection{Constructors}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{About()}
+\hypertarget{com.example.kostkadogry.About()}{{\bf  About}\\}
+\texttt{public\ {\bf  About}()
+\label{com.example.kostkadogry.About()}}%end signature
+}%end item
+\end{itemize}
+}
+\subsubsection{Methods}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{btnLicenseClicked(View)}
+\hypertarget{com.example.kostkadogry.About.btnLicenseClicked(View)}{{\bf  btnLicenseClicked}\\}
+\texttt{public void\ {\bf  btnLicenseClicked}(\texttt{View} {\bf  view})
+\label{com.example.kostkadogry.About.btnLicenseClicked(View)}}%end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Obsługuje zdarzenie wciśnięcia przycisku Licencja - wyświetla licencję programu.
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{view} -- Bieżący widok}
+  \end{itemize}
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{btnOKClicked(View)}
+\hypertarget{com.example.kostkadogry.About.btnOKClicked(View)}{{\bf  btnOKClicked}\\}
+\texttt{public void\ {\bf  btnOKClicked}(\texttt{View} {\bf  view})
+\label{com.example.kostkadogry.About.btnOKClicked(View)}}%end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Obsługuje zdarzenie wciśnięcia przycisku OK. Obsługa tego zdarzenia skutkuje zamknięciem widoku (okna).
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{view} -- Bieżący widok}
+  \end{itemize}
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{onCreate(Bundle)}
+\hypertarget{com.example.kostkadogry.About.onCreate(Bundle)}{{\bf  onCreate}\\}
+\texttt{protected void\ {\bf  onCreate}(\texttt{Bundle} {\bf  savedInstanceState})
+\label{com.example.kostkadogry.About.onCreate(Bundle)}}%end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Funkcja odpowiada za obsługę uruchomienia programu.
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{Stan} -- instancji klasy (programu)}
+  \end{itemize}
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{onCreateOptionsMenu(Menu)}
+\hypertarget{com.example.kostkadogry.About.onCreateOptionsMenu(Menu)}{{\bf  onCreateOptionsMenu}\\}
+\texttt{public boolean\ {\bf  onCreateOptionsMenu}(\texttt{Menu} {\bf  menu})
+\label{com.example.kostkadogry.About.onCreateOptionsMenu(Menu)}}%end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Dodaje do menu okna opcje menu.
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{menu} -- Tworzone menu programu}
+  \end{itemize}
+}%end item
+\item{{\bf  Returns} -- 
+Stan tworzenia opcji menu 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{onOptionsItemSelected(MenuItem)}
+\hypertarget{com.example.kostkadogry.About.onOptionsItemSelected(MenuItem)}{{\bf  onOptionsItemSelected}\\}
+\texttt{public boolean\ {\bf  onOptionsItemSelected}(\texttt{MenuItem} {\bf  item})
+\label{com.example.kostkadogry.About.onOptionsItemSelected(MenuItem)}}%end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Funkcja obsługuje zdarzenie wybrania pozycji w menu okna. Wybranie pozycji w menu skutkuje uruchomieniem wskazanego okna (widoku).
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{item} -- Pozycja w menu}
+  \end{itemize}
+}%end item
+\item{{\bf  Returns} -- 
+Stwierdzenie wyboru opcji 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{onPrepareOptionsMenu(Menu)}
+\hypertarget{com.example.kostkadogry.About.onPrepareOptionsMenu(Menu)}{{\bf  onPrepareOptionsMenu}\\}
+\texttt{public boolean\ {\bf  onPrepareOptionsMenu}(\texttt{Menu} {\bf  menu})
+\label{com.example.kostkadogry.About.onPrepareOptionsMenu(Menu)}}%end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Obsługuje zdarzenie tworzenia menu okna. W tym przypadku jest wyłączone - ustawione na \texttt{\small false}.
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{menu} -- Tworzone menu programu}
+  \end{itemize}
+}%end item
+\item{{\bf  Returns} -- 
+Potwierdzenie tworzenia menu 
+}%end item
+\end{itemize}
+}%end item
+\end{itemize}
+}
+}
+\subsection{\label{com.example.kostkadogry.About.PlaceholderFragment}Class About.PlaceholderFragment}{
+\hypertarget{com.example.kostkadogry.About.PlaceholderFragment}{}\vskip .1in 
+Widok okna pomocy.\vskip .1in 
+\subsubsection{Declaration}{
+\small public static class About.PlaceholderFragment
+\\ {\bf  extends} Fragment
+\refdefined{.Fragment}}
+\subsubsection{Constructor summary}{
+\begin{verse}
+\hyperlink{com.example.kostkadogry.About.PlaceholderFragment()}{{\bf About.PlaceholderFragment()}} \\
+\end{verse}
+}
+\subsubsection{Method summary}{
+\begin{verse}
+\hyperlink{com.example.kostkadogry.About.PlaceholderFragment.onCreateView(LayoutInflater, ViewGroup, Bundle)}{{\bf onCreateView(LayoutInflater, ViewGroup, Bundle)}} \\
+\end{verse}
+}
+\subsubsection{Constructors}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{About.PlaceholderFragment()}
+\hypertarget{com.example.kostkadogry.About.PlaceholderFragment()}{{\bf  About.PlaceholderFragment}\\}
+\texttt{public\ {\bf  About.PlaceholderFragment}()
+\label{com.example.kostkadogry.About.PlaceholderFragment()}}%end signature
+}%end item
+\end{itemize}
+}
+\subsubsection{Methods}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{onCreateView(LayoutInflater, ViewGroup, Bundle)}
+\hypertarget{com.example.kostkadogry.About.PlaceholderFragment.onCreateView(LayoutInflater, ViewGroup, Bundle)}{{\bf  onCreateView}\\}
+\texttt{public View\ {\bf  onCreateView}(\texttt{LayoutInflater} {\bf  inflater},
+\texttt{ViewGroup} {\bf  container},
+\texttt{Bundle} {\bf  savedInstanceState})
+\label{com.example.kostkadogry.About.PlaceholderFragment.onCreateView(LayoutInflater, ViewGroup, Bundle)}}%end signature
+}%end item
+\end{itemize}
+}
+}
+\subsection{\label{com.example.kostkadogry.Help}Class Help}{
+\hypertarget{com.example.kostkadogry.Help}{}\vskip .1in 
+Klasa implementuje zachowanie aktywności Pomoc - wyświetla skróconą\phantom{ }instrukcję obsługi aplikacji.\vskip .1in 
+\subsubsection{Declaration}{
+\small public class Help
+\\ {\bf  extends} ActionBarActivity
+\refdefined{.ActionBarActivity}}
+\subsubsection{Constructor summary}{
+\begin{verse}
+\hyperlink{com.example.kostkadogry.Help()}{{\bf Help()}} \\
+\end{verse}
+}
+\subsubsection{Method summary}{
+\begin{verse}
+\hyperlink{com.example.kostkadogry.Help.btnOKClicked(View)}{{\bf btnOKClicked(View)}} Obsługuje zdarzenie wciśnięcia przycisku OK.\\
+\hyperlink{com.example.kostkadogry.Help.onCreate(Bundle)}{{\bf onCreate(Bundle)}} Funkcja odpowiada za obsługę uruchomienia programu.\\
+\hyperlink{com.example.kostkadogry.Help.onCreateOptionsMenu(Menu)}{{\bf onCreateOptionsMenu(Menu)}} Dodaje do menu okna opcje menu.\\
+\hyperlink{com.example.kostkadogry.Help.onOptionsItemSelected(MenuItem)}{{\bf onOptionsItemSelected(MenuItem)}} Funkcja obsługuje zdarzenie wybrania pozycji w menu okna.\\
+\end{verse}
+}
+\subsubsection{Constructors}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{Help()}
+\hypertarget{com.example.kostkadogry.Help()}{{\bf  Help}\\}
+\texttt{public\ {\bf  Help}()
+\label{com.example.kostkadogry.Help()}}%end signature
+}%end item
+\end{itemize}
+}
+\subsubsection{Methods}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{btnOKClicked(View)}
+\hypertarget{com.example.kostkadogry.Help.btnOKClicked(View)}{{\bf  btnOKClicked}\\}
+\texttt{public void\ {\bf  btnOKClicked}(\texttt{View} {\bf  view})
+\label{com.example.kostkadogry.Help.btnOKClicked(View)}}%end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Obsługuje zdarzenie wciśnięcia przycisku OK. Obsługa tego zdarzenia skutkuje zamknięciem widoku (okna).
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{view} -- Bieżący widok}
+  \end{itemize}
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{onCreate(Bundle)}
+\hypertarget{com.example.kostkadogry.Help.onCreate(Bundle)}{{\bf  onCreate}\\}
+\texttt{protected void\ {\bf  onCreate}(\texttt{Bundle} {\bf  savedInstanceState})
+\label{com.example.kostkadogry.Help.onCreate(Bundle)}}%end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Funkcja odpowiada za obsługę uruchomienia programu.
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{Stan} -- instancji klasy (programu)}
+  \end{itemize}
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{onCreateOptionsMenu(Menu)}
+\hypertarget{com.example.kostkadogry.Help.onCreateOptionsMenu(Menu)}{{\bf  onCreateOptionsMenu}\\}
+\texttt{public boolean\ {\bf  onCreateOptionsMenu}(\texttt{Menu} {\bf  menu})
+\label{com.example.kostkadogry.Help.onCreateOptionsMenu(Menu)}}%end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Dodaje do menu okna opcje menu.
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{menu} -- Tworzone menu programu}
+  \end{itemize}
+}%end item
+\item{{\bf  Returns} -- 
+Stan tworzenia opcji menu 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{onOptionsItemSelected(MenuItem)}
+\hypertarget{com.example.kostkadogry.Help.onOptionsItemSelected(MenuItem)}{{\bf  onOptionsItemSelected}\\}
+\texttt{public boolean\ {\bf  onOptionsItemSelected}(\texttt{MenuItem} {\bf  item})
+\label{com.example.kostkadogry.Help.onOptionsItemSelected(MenuItem)}}%end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Funkcja obsługuje zdarzenie wybrania pozycji w menu okna. Wybranie pozycji w menu skutkuje uruchomieniem wskazanego okna (widoku).
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{item} -- Pozycja w menu}
+  \end{itemize}
+}%end item
+\item{{\bf  Returns} -- 
+Stwierdzenie wyboru opcji 
+}%end item
+\end{itemize}
+}%end item
+\end{itemize}
+}
+}
+\subsection{\label{com.example.kostkadogry.Help.PlaceholderFragment}Class Help.PlaceholderFragment}{
+\hypertarget{com.example.kostkadogry.Help.PlaceholderFragment}{}\vskip .1in 
+Widok okna pomocy.\vskip .1in 
+\subsubsection{Declaration}{
+\small public static class Help.PlaceholderFragment
+\\ {\bf  extends} Fragment
+\refdefined{.Fragment}}
+\subsubsection{Constructor summary}{
+\begin{verse}
+\hyperlink{com.example.kostkadogry.Help.PlaceholderFragment()}{{\bf Help.PlaceholderFragment()}} \\
+\end{verse}
+}
+\subsubsection{Method summary}{
+\begin{verse}
+\hyperlink{com.example.kostkadogry.Help.PlaceholderFragment.onCreateView(LayoutInflater, ViewGroup, Bundle)}{{\bf onCreateView(LayoutInflater, ViewGroup, Bundle)}} \\
+\end{verse}
+}
+\subsubsection{Constructors}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{Help.PlaceholderFragment()}
+\hypertarget{com.example.kostkadogry.Help.PlaceholderFragment()}{{\bf  Help.PlaceholderFragment}\\}
+\texttt{public\ {\bf  Help.PlaceholderFragment}()
+\label{com.example.kostkadogry.Help.PlaceholderFragment()}}%end signature
+}%end item
+\end{itemize}
+}
+\subsubsection{Methods}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{onCreateView(LayoutInflater, ViewGroup, Bundle)}
+\hypertarget{com.example.kostkadogry.Help.PlaceholderFragment.onCreateView(LayoutInflater, ViewGroup, Bundle)}{{\bf  onCreateView}\\}
+\texttt{public View\ {\bf  onCreateView}(\texttt{LayoutInflater} {\bf  inflater},
+\texttt{ViewGroup} {\bf  container},
+\texttt{Bundle} {\bf  savedInstanceState})
+\label{com.example.kostkadogry.Help.PlaceholderFragment.onCreateView(LayoutInflater, ViewGroup, Bundle)}}%end signature
+}%end item
+\end{itemize}
+}
+}
+\subsection{\label{com.example.kostkadogry.KontrolerKostki}Class KontrolerKostki}{
+\hypertarget{com.example.kostkadogry.KontrolerKostki}{}\vskip .1in 
+Zapewnia wizualizację wyników rzutu kostką, której zachowanie zostało zdefiniowane w klasie Kostka.\vskip .1in 
+\subsubsection{See also}{}
+
+  \begin{list}{-- }{\setlength{\itemsep}{0cm}\setlength{\parsep}{0cm}}
+\item{ \texttt{\hyperlink{com.example.kostkadogry.Kostka}{Kostka}} {\small 
+\refdefined{com.example.kostkadogry.Kostka}}%end
+} 
+  \end{list}
+\subsubsection{Declaration}{
+\small public class KontrolerKostki
+\\ {\bf  extends} com.example.kostkadogry.Kostka
+\refdefined{com.example.kostkadogry.Kostka}}
+\subsubsection{Constructor summary}{
+\begin{verse}
+\hyperlink{com.example.kostkadogry.KontrolerKostki()}{{\bf KontrolerKostki()}} Tworzy obiekt klasy KontrolerKostka z domyślnymi parametrami (kostka 6-ścienna).\\
+\hyperlink{com.example.kostkadogry.KontrolerKostki(com.example.kostkadogry.Kostka.RodzajKostki)}{{\bf KontrolerKostki(Kostka.RodzajKostki)}} Tworzy obiekt klasy Kostka o danym rodzaju.\\
+\end{verse}
+}
+\subsubsection{Method summary}{
+\begin{verse}
+\hyperlink{com.example.kostkadogry.KontrolerKostki.getIdObrazu()}{{\bf getIdObrazu()}} Funkcja zwraca wygenerowany z zasobów aplikacji ID obrazu odpowiadającego wylosowanej wartości.\\
+\end{verse}
+}
+\subsubsection{Constructors}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{KontrolerKostki()}
+\hypertarget{com.example.kostkadogry.KontrolerKostki()}{{\bf  KontrolerKostki}\\}
+\texttt{public\ {\bf  KontrolerKostki}()
+\label{com.example.kostkadogry.KontrolerKostki()}}%end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Tworzy obiekt klasy KontrolerKostka z domyślnymi parametrami (kostka 6-ścienna).
+}
+\item{{\bf  See also}
+  \begin{itemize}
+\item{ \texttt{\hyperlink{com.example.kostkadogry.KontrolerKostki}{KontrolerKostki}} {\small 
+\refdefined{com.example.kostkadogry.KontrolerKostki}}%end
+}
+  \end{itemize}
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{KontrolerKostki(Kostka.RodzajKostki)}
+\hypertarget{com.example.kostkadogry.KontrolerKostki(com.example.kostkadogry.Kostka.RodzajKostki)}{{\bf  KontrolerKostki}\\}
+\texttt{public\ {\bf  KontrolerKostki}(\texttt{Kostka.RodzajKostki} {\bf  rodzaj})
+\label{com.example.kostkadogry.KontrolerKostki(com.example.kostkadogry.Kostka.RodzajKostki)}}%end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Tworzy obiekt klasy Kostka o danym rodzaju.
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{rodzaj} -- Rodzaj kostki (liczba ścian kostki)}
+  \end{itemize}
+}%end item
+\item{{\bf  See also}
+  \begin{itemize}
+\item{ \texttt{\hyperlink{com.example.kostkadogry.KontrolerKostki}{KontrolerKostki}} {\small 
+\refdefined{com.example.kostkadogry.KontrolerKostki}}%end
+}
+\item{ RodzajKostki}
+  \end{itemize}
+}%end item
+\end{itemize}
+}%end item
+\end{itemize}
+}
+\subsubsection{Methods}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{getIdObrazu()}
+\hypertarget{com.example.kostkadogry.KontrolerKostki.getIdObrazu()}{{\bf  getIdObrazu}\\}
+\texttt{public int\ {\bf  getIdObrazu}()
+\label{com.example.kostkadogry.KontrolerKostki.getIdObrazu()}}%end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Funkcja zwraca wygenerowany z zasobów aplikacji ID obrazu odpowiadającego wylosowanej wartości.
+}
+\item{{\bf  Returns} -- 
+ID obrazu 
+}%end item
+\end{itemize}
+}%end item
+\end{itemize}
+}
+\subsubsection{Members inherited from class Kostka }{
+\texttt{com.example.kostkadogry.Kostka} {\small 
+\refdefined{com.example.kostkadogry.Kostka}}
+{\small 
+
+\vskip -2em
+\begin{itemize}
+\item{\vskip -1.5ex 
+\texttt{public int {\bf  getLiczba}()
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{public Kostka.RodzajKostki {\bf  getRodzajKostki}()
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{public int {\bf  getZakres}()
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{public void {\bf  losujLiczbe}()
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{public void {\bf  setRodzajKostki}(\texttt{Kostka.RodzajKostki} {\bf  k})
+}%end signature
+}%end item
+\end{itemize}
+}
+}
+\subsection{\label{com.example.kostkadogry.Kostka}Class Kostka}{
+\hypertarget{com.example.kostkadogry.Kostka}{}\vskip .1in 
+Klasa implementująca mechanizm kostki do gry\vskip .1in 
+\subsubsection{Declaration}{
+\small public class Kostka
+\\ {\bf  extends} java.lang.Object
+\refdefined{java.lang.Object}}
+\subsubsection{All known subclasses}{KontrolerKostki\small{\refdefined{com.example.kostkadogry.KontrolerKostki}}}
+\subsubsection{Constructor summary}{
+\begin{verse}
+\hyperlink{com.example.kostkadogry.Kostka()}{{\bf Kostka()}} Tworzy obiekt klasy Kostka o domyślnych parametrach (6-ścienna kostka do gry) i losowej liczbie z rozkładu jednostajnego.\\
+\hyperlink{com.example.kostkadogry.Kostka(com.example.kostkadogry.Kostka.RodzajKostki)}{{\bf Kostka(Kostka.RodzajKostki)}} Tworzy obiekt klasy Kostka o danym rodzaju\\
+\end{verse}
+}
+\subsubsection{Method summary}{
+\begin{verse}
+\hyperlink{com.example.kostkadogry.Kostka.getLiczba()}{{\bf getLiczba()}} Funkcja zwraca wylosowaną liczbę.\\
+\hyperlink{com.example.kostkadogry.Kostka.getRodzajKostki()}{{\bf getRodzajKostki()}} Funkcja zwraca aktualny rodzaj kostki\\
+\hyperlink{com.example.kostkadogry.Kostka.getZakres()}{{\bf getZakres()}} Funkcja zwraca zakres liczb, które mogą zostać wylosowane.\\
+\hyperlink{com.example.kostkadogry.Kostka.losujLiczbe()}{{\bf losujLiczbe()}} Losuje liczbę na kostce do gry z zakresu 1 ÷ N, gdzie N to liczba ścian.\\
+\hyperlink{com.example.kostkadogry.Kostka.setRodzajKostki(com.example.kostkadogry.Kostka.RodzajKostki)}{{\bf setRodzajKostki(Kostka.RodzajKostki)}} Funkcja służy do zmiany aktualnego rodzaju kostki.\\
+\end{verse}
+}
+\subsubsection{Constructors}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{Kostka()}
+\hypertarget{com.example.kostkadogry.Kostka()}{{\bf  Kostka}\\}
+\texttt{public\ {\bf  Kostka}()
+\label{com.example.kostkadogry.Kostka()}}%end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Tworzy obiekt klasy Kostka o domyślnych parametrach (6-ścienna kostka do gry) i losowej liczbie z rozkładu jednostajnego.
+}
+\end{itemize}
+}%end item
+\item{ 
+\index{Kostka(Kostka.RodzajKostki)}
+\hypertarget{com.example.kostkadogry.Kostka(com.example.kostkadogry.Kostka.RodzajKostki)}{{\bf  Kostka}\\}
+\texttt{public\ {\bf  Kostka}(\texttt{Kostka.RodzajKostki} {\bf  rodzaj})
+\label{com.example.kostkadogry.Kostka(com.example.kostkadogry.Kostka.RodzajKostki)}}%end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Tworzy obiekt klasy Kostka o danym rodzaju
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{rodzaj} -- Rodzaj kostki do gry (liczba ścian kostki)}
+  \end{itemize}
+}%end item
+\end{itemize}
+}%end item
+\end{itemize}
+}
+\subsubsection{Methods}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{getLiczba()}
+\hypertarget{com.example.kostkadogry.Kostka.getLiczba()}{{\bf  getLiczba}\\}
+\texttt{public int\ {\bf  getLiczba}()
+\label{com.example.kostkadogry.Kostka.getLiczba()}}%end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Funkcja zwraca wylosowaną liczbę.
+}
+\item{{\bf  Returns} -- 
+Wylosowana liczba. 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{getRodzajKostki()}
+\hypertarget{com.example.kostkadogry.Kostka.getRodzajKostki()}{{\bf  getRodzajKostki}\\}
+\texttt{public Kostka.RodzajKostki\ {\bf  getRodzajKostki}()
+\label{com.example.kostkadogry.Kostka.getRodzajKostki()}}%end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Funkcja zwraca aktualny rodzaj kostki
+}
+\item{{\bf  Returns} -- 
+rodzaj kostki 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{getZakres()}
+\hypertarget{com.example.kostkadogry.Kostka.getZakres()}{{\bf  getZakres}\\}
+\texttt{public int\lbrack \rbrack \ {\bf  getZakres}()
+\label{com.example.kostkadogry.Kostka.getZakres()}}%end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Funkcja zwraca zakres liczb, które mogą zostać wylosowane.
+}
+\item{{\bf  Returns} -- 
+Zakres liczb 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{losujLiczbe()}
+\hypertarget{com.example.kostkadogry.Kostka.losujLiczbe()}{{\bf  losujLiczbe}\\}
+\texttt{public void\ {\bf  losujLiczbe}()
+\label{com.example.kostkadogry.Kostka.losujLiczbe()}}%end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Losuje liczbę na kostce do gry z zakresu 1 ÷ N, gdzie N to liczba ścian. Wyjątkiem jest kostka K10, dla której wylosowane zostaną liczby z zakresu 0 ÷ N-1
+}
+\end{itemize}
+}%end item
+\item{ 
+\index{setRodzajKostki(Kostka.RodzajKostki)}
+\hypertarget{com.example.kostkadogry.Kostka.setRodzajKostki(com.example.kostkadogry.Kostka.RodzajKostki)}{{\bf  setRodzajKostki}\\}
+\texttt{public void\ {\bf  setRodzajKostki}(\texttt{Kostka.RodzajKostki} {\bf  k})
+\label{com.example.kostkadogry.Kostka.setRodzajKostki(com.example.kostkadogry.Kostka.RodzajKostki)}}%end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Funkcja służy do zmiany aktualnego rodzaju kostki.
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{k} -- Rodzaj kostki}
+  \end{itemize}
+}%end item
+\end{itemize}
+}%end item
+\end{itemize}
+}
+}
+\subsection{\label{com.example.kostkadogry.Kostka.RodzajKostki}Class Kostka.RodzajKostki}{
+\hypertarget{com.example.kostkadogry.Kostka.RodzajKostki}{}\vskip .1in 
+Typ wyliczeniowy implementujący rodzaj kostki do gry. Możliwe wartości: K3, K4, K5, K6, K7, K8, K10, K12, K14, K16, K20, K24, K30, K48.\vskip .1in 
+\subsubsection{Declaration}{
+\small public static final class Kostka.RodzajKostki
+\\ {\bf  extends} java.lang.Enum
+\refdefined{java.lang.Enum}}
+\subsubsection{Field summary}{
+\begin{verse}
+\hyperlink{com.example.kostkadogry.Kostka.RodzajKostki.K10}{{\bf K10}} Kostka 10-ścienna.\\
+\hyperlink{com.example.kostkadogry.Kostka.RodzajKostki.K12}{{\bf K12}} Kostka 12-ścienna.\\
+\hyperlink{com.example.kostkadogry.Kostka.RodzajKostki.K14}{{\bf K14}} Kostka 14-ścienna.\\
+\hyperlink{com.example.kostkadogry.Kostka.RodzajKostki.K16}{{\bf K16}} Kostka 14-ścienna.\\
+\hyperlink{com.example.kostkadogry.Kostka.RodzajKostki.K20}{{\bf K20}} Kostka 16-ścienna.\\
+\hyperlink{com.example.kostkadogry.Kostka.RodzajKostki.K24}{{\bf K24}} Kostka 24-ścienna.\\
+\hyperlink{com.example.kostkadogry.Kostka.RodzajKostki.K3}{{\bf K3}} Kostka 3-ścienna.\\
+\hyperlink{com.example.kostkadogry.Kostka.RodzajKostki.K30}{{\bf K30}} Kostka 30-ścienna.\\
+\hyperlink{com.example.kostkadogry.Kostka.RodzajKostki.K4}{{\bf K4}} Kostka 4-ścienna.\\
+\hyperlink{com.example.kostkadogry.Kostka.RodzajKostki.K48}{{\bf K48}} Kostka 48-ścienna.\\
+\hyperlink{com.example.kostkadogry.Kostka.RodzajKostki.K5}{{\bf K5}} Kostka 5-ścienna.\\
+\hyperlink{com.example.kostkadogry.Kostka.RodzajKostki.K6}{{\bf K6}} Kostka sześcienna (domyślna).\\
+\hyperlink{com.example.kostkadogry.Kostka.RodzajKostki.K7}{{\bf K7}} Kostka 7-ścienna.\\
+\hyperlink{com.example.kostkadogry.Kostka.RodzajKostki.K8}{{\bf K8}} Kostka 8-ścienna.\\
+\end{verse}
+}
+\subsubsection{Method summary}{
+\begin{verse}
+\hyperlink{com.example.kostkadogry.Kostka.RodzajKostki.getValue()}{{\bf getValue()}} Funkcja zwracająca liczbę ścian kostki do gry danego rodzaju.\\
+\hyperlink{com.example.kostkadogry.Kostka.RodzajKostki.valueOf(java.lang.String)}{{\bf valueOf(String)}} \\
+\hyperlink{com.example.kostkadogry.Kostka.RodzajKostki.values()}{{\bf values()}} \\
+\end{verse}
+}
+\subsubsection{Fields}{
+\begin{itemize}
+\item{
+\index{K3}
+\label{com.example.kostkadogry.Kostka.RodzajKostki.K3}\hypertarget{com.example.kostkadogry.Kostka.RodzajKostki.K3}{public static final Kostka.RodzajKostki {\bf  K3}}
+\begin{itemize}
+\item{\vskip -.9ex 
+Kostka 3-ścienna.}
+\end{itemize}
+}
+\item{
+\index{K4}
+\label{com.example.kostkadogry.Kostka.RodzajKostki.K4}\hypertarget{com.example.kostkadogry.Kostka.RodzajKostki.K4}{public static final Kostka.RodzajKostki {\bf  K4}}
+\begin{itemize}
+\item{\vskip -.9ex 
+Kostka 4-ścienna. Wartości liczbowe umieszczone w~wierzchołku kości.}
+\end{itemize}
+}
+\item{
+\index{K5}
+\label{com.example.kostkadogry.Kostka.RodzajKostki.K5}\hypertarget{com.example.kostkadogry.Kostka.RodzajKostki.K5}{public static final Kostka.RodzajKostki {\bf  K5}}
+\begin{itemize}
+\item{\vskip -.9ex 
+Kostka 5-ścienna. Podstawy zawierają wartości 1 i 5.}
+\end{itemize}
+}
+\item{
+\index{K6}
+\label{com.example.kostkadogry.Kostka.RodzajKostki.K6}\hypertarget{com.example.kostkadogry.Kostka.RodzajKostki.K6}{public static final Kostka.RodzajKostki {\bf  K6}}
+\begin{itemize}
+\item{\vskip -.9ex 
+Kostka sześcienna (domyślna).}
+\end{itemize}
+}
+\item{
+\index{K7}
+\label{com.example.kostkadogry.Kostka.RodzajKostki.K7}\hypertarget{com.example.kostkadogry.Kostka.RodzajKostki.K7}{public static final Kostka.RodzajKostki {\bf  K7}}
+\begin{itemize}
+\item{\vskip -.9ex 
+Kostka 7-ścienna. Podstawy zawierają wartości 6 i 7.}
+\end{itemize}
+}
+\item{
+\index{K8}
+\label{com.example.kostkadogry.Kostka.RodzajKostki.K8}\hypertarget{com.example.kostkadogry.Kostka.RodzajKostki.K8}{public static final Kostka.RodzajKostki {\bf  K8}}
+\begin{itemize}
+\item{\vskip -.9ex 
+Kostka 8-ścienna.}
+\end{itemize}
+}
+\item{
+\index{K10}
+\label{com.example.kostkadogry.Kostka.RodzajKostki.K10}\hypertarget{com.example.kostkadogry.Kostka.RodzajKostki.K10}{public static final Kostka.RodzajKostki {\bf  K10}}
+\begin{itemize}
+\item{\vskip -.9ex 
+Kostka 10-ścienna. Zawiera wartości od 0 do 9.}
+\end{itemize}
+}
+\item{
+\index{K12}
+\label{com.example.kostkadogry.Kostka.RodzajKostki.K12}\hypertarget{com.example.kostkadogry.Kostka.RodzajKostki.K12}{public static final Kostka.RodzajKostki {\bf  K12}}
+\begin{itemize}
+\item{\vskip -.9ex 
+Kostka 12-ścienna.}
+\end{itemize}
+}
+\item{
+\index{K14}
+\label{com.example.kostkadogry.Kostka.RodzajKostki.K14}\hypertarget{com.example.kostkadogry.Kostka.RodzajKostki.K14}{public static final Kostka.RodzajKostki {\bf  K14}}
+\begin{itemize}
+\item{\vskip -.9ex 
+Kostka 14-ścienna.}
+\end{itemize}
+}
+\item{
+\index{K16}
+\label{com.example.kostkadogry.Kostka.RodzajKostki.K16}\hypertarget{com.example.kostkadogry.Kostka.RodzajKostki.K16}{public static final Kostka.RodzajKostki {\bf  K16}}
+\begin{itemize}
+\item{\vskip -.9ex 
+Kostka 14-ścienna.}
+\end{itemize}
+}
+\item{
+\index{K20}
+\label{com.example.kostkadogry.Kostka.RodzajKostki.K20}\hypertarget{com.example.kostkadogry.Kostka.RodzajKostki.K20}{public static final Kostka.RodzajKostki {\bf  K20}}
+\begin{itemize}
+\item{\vskip -.9ex 
+Kostka 16-ścienna.}
+\end{itemize}
+}
+\item{
+\index{K24}
+\label{com.example.kostkadogry.Kostka.RodzajKostki.K24}\hypertarget{com.example.kostkadogry.Kostka.RodzajKostki.K24}{public static final Kostka.RodzajKostki {\bf  K24}}
+\begin{itemize}
+\item{\vskip -.9ex 
+Kostka 24-ścienna.}
+\end{itemize}
+}
+\item{
+\index{K30}
+\label{com.example.kostkadogry.Kostka.RodzajKostki.K30}\hypertarget{com.example.kostkadogry.Kostka.RodzajKostki.K30}{public static final Kostka.RodzajKostki {\bf  K30}}
+\begin{itemize}
+\item{\vskip -.9ex 
+Kostka 30-ścienna.}
+\end{itemize}
+}
+\item{
+\index{K48}
+\label{com.example.kostkadogry.Kostka.RodzajKostki.K48}\hypertarget{com.example.kostkadogry.Kostka.RodzajKostki.K48}{public static final Kostka.RodzajKostki {\bf  K48}}
+\begin{itemize}
+\item{\vskip -.9ex 
+Kostka 48-ścienna.}
+\end{itemize}
+}
+\end{itemize}
+}
+\subsubsection{Methods}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{getValue()}
+\hypertarget{com.example.kostkadogry.Kostka.RodzajKostki.getValue()}{{\bf  getValue}\\}
+\texttt{public int\ {\bf  getValue}()
+\label{com.example.kostkadogry.Kostka.RodzajKostki.getValue()}}%end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Funkcja zwracająca liczbę ścian kostki do gry danego rodzaju.
+}
+\item{{\bf  Returns} -- 
+Liczba ścian kostki 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{valueOf(String)}
+\hypertarget{com.example.kostkadogry.Kostka.RodzajKostki.valueOf(java.lang.String)}{{\bf  valueOf}\\}
+\texttt{public static Kostka.RodzajKostki\ {\bf  valueOf}(\texttt{java.lang.String} {\bf  name})
+\label{com.example.kostkadogry.Kostka.RodzajKostki.valueOf(java.lang.String)}}%end signature
+}%end item
+\item{ 
+\index{values()}
+\hypertarget{com.example.kostkadogry.Kostka.RodzajKostki.values()}{{\bf  values}\\}
+\texttt{public static Kostka.RodzajKostki\lbrack \rbrack \ {\bf  values}()
+\label{com.example.kostkadogry.Kostka.RodzajKostki.values()}}%end signature
+}%end item
+\end{itemize}
+}
+\subsubsection{Members inherited from class Enum }{
+\texttt{java.lang.Enum} {\small 
+\refdefined{java.lang.Enum}}
+{\small 
+
+\vskip -2em
+\begin{itemize}
+\item{\vskip -1.5ex 
+\texttt{protected final Object {\bf  clone}() throws CloneNotSupportedException
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{public final int {\bf  compareTo}(\texttt{Enum} {\bf  arg0})
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{public final boolean {\bf  equals}(\texttt{Object} {\bf  arg0})
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{protected final void {\bf  finalize}()
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{public final Class {\bf  getDeclaringClass}()
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{public final int {\bf  hashCode}()
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{public final String {\bf  name}()
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{public final int {\bf  ordinal}()
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{public String {\bf  toString}()
+}%end signature
+}%end item
+\item{\vskip -1.5ex 
+\texttt{public static Enum {\bf  valueOf}(\texttt{Class} {\bf  arg0},
+\texttt{String} {\bf  arg1})
+}%end signature
+}%end item
+\end{itemize}
+}
+}
+\subsection{\label{com.example.kostkadogry.MainActivity}Class MainActivity}{
+\hypertarget{com.example.kostkadogry.MainActivity}{}\vskip .1in 
+Klasa implementująca zachowanie głównej aktywności (okna) programu. Zawiera interfejs do dodawania/usuwania kostek oraz wybrane kostki do gry. Obok kostek wyświetlana jest bieżąca wartość oraz zakres losowanych liczb.\vskip .1in 
+\subsubsection{Declaration}{
+\small public class MainActivity
+\\ {\bf  extends} Activity
+\refdefined{.Activity}}
+\subsubsection{Constructor summary}{
+\begin{verse}
+\hyperlink{com.example.kostkadogry.MainActivity()}{{\bf MainActivity()}} \\
+\end{verse}
+}
+\subsubsection{Method summary}{
+\begin{verse}
+\hyperlink{com.example.kostkadogry.MainActivity.DieChange(View)}{{\bf DieChange(View)}} Obsługuje zdarzenie naciśnięcia na kostkę.\\
+\hyperlink{com.example.kostkadogry.MainActivity.losujLiczbe()}{{\bf losujLiczbe()}} Losuje liczby na kostkach i pokazuje wyniki w postaci obrazów ścian z wartościami wylosowanych liczb.\\
+\hyperlink{com.example.kostkadogry.MainActivity.onAccuracyChanged(Sensor, int)}{{\bf onAccuracyChanged(Sensor, int)}} Obsługuje zdarzenie zmiany dokładności czujnika.\\
+\hyperlink{com.example.kostkadogry.MainActivity.onActivityResult(int, int, Intent)}{{\bf onActivityResult(int, int, Intent)}} Obsługuje zdarzenie zatwierdzenia ustawień w oknie Ustawienia.\\
+\hyperlink{com.example.kostkadogry.MainActivity.onAddDie(View)}{{\bf onAddDie(View)}} Obsługuje procedurę dodawania kostek.\\
+\hyperlink{com.example.kostkadogry.MainActivity.onButtonClick(View)}{{\bf onButtonClick(View)}} Obsługuje zdarzenie naciśnięcia na przycisk „Losuj”.\\
+\hyperlink{com.example.kostkadogry.MainActivity.onCreate(Bundle)}{{\bf onCreate(Bundle)}} Funkcja odpowiada za obsługę uruchomienia programu.\\
+\hyperlink{com.example.kostkadogry.MainActivity.onCreateOptionsMenu(Menu)}{{\bf onCreateOptionsMenu(Menu)}} Tworzy menu programu i wyświetla je na żądanie użytkownika.\\
+\hyperlink{com.example.kostkadogry.MainActivity.onOptionsItemSelected(MenuItem)}{{\bf onOptionsItemSelected(MenuItem)}} Funkcja obsługuje zdarzenie wybrania pozycji w menu aplikacji.\\
+\hyperlink{com.example.kostkadogry.MainActivity.onPause()}{{\bf onPause()}} Obsługuje zdarzenie przejścia programu do działania w tle.\\
+\hyperlink{com.example.kostkadogry.MainActivity.onRemoveDie(View)}{{\bf onRemoveDie(View)}} Obsługuje procedurę usuwania kostek.\\
+\hyperlink{com.example.kostkadogry.MainActivity.onResume()}{{\bf onResume()}} Obsługuje zdarzenie ponownego uruchomienia programu.\\
+\hyperlink{com.example.kostkadogry.MainActivity.onSensorChanged(SensorEvent)}{{\bf onSensorChanged(SensorEvent)}} Obsługuje zdarzenie zmiany stanu akcelerometru.\\
+\end{verse}
+}
+\subsubsection{Constructors}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{MainActivity()}
+\hypertarget{com.example.kostkadogry.MainActivity()}{{\bf  MainActivity}\\}
+\texttt{public\ {\bf  MainActivity}()
+\label{com.example.kostkadogry.MainActivity()}}%end signature
+}%end item
+\end{itemize}
+}
+\subsubsection{Methods}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{DieChange(View)}
+\hypertarget{com.example.kostkadogry.MainActivity.DieChange(View)}{{\bf  DieChange}\\}
+\texttt{public void\ {\bf  DieChange}(\texttt{View} {\bf  view})
+\label{com.example.kostkadogry.MainActivity.DieChange(View)}}%end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Obsługuje zdarzenie naciśnięcia na kostkę. Skutkiem jest wywołanie okna (widoku) Ustawienia, w którym użykownik może zmienić rodzaj kostki.
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{view} -- Bieżący widok (okno) programu.}
+  \end{itemize}
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{losujLiczbe()}
+\hypertarget{com.example.kostkadogry.MainActivity.losujLiczbe()}{{\bf  losujLiczbe}\\}
+\texttt{public void\ {\bf  losujLiczbe}()
+\label{com.example.kostkadogry.MainActivity.losujLiczbe()}}%end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Losuje liczby na kostkach i pokazuje wyniki w postaci obrazów ścian z wartościami wylosowanych liczb.
+}
+\end{itemize}
+}%end item
+\item{ 
+\index{onAccuracyChanged(Sensor, int)}
+\hypertarget{com.example.kostkadogry.MainActivity.onAccuracyChanged(Sensor, int)}{{\bf  onAccuracyChanged}\\}
+\texttt{public void\ {\bf  onAccuracyChanged}(\texttt{Sensor} {\bf  sensor},
+\texttt{int} {\bf  accuracy})
+\label{com.example.kostkadogry.MainActivity.onAccuracyChanged(Sensor, int)}}%end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Obsługuje zdarzenie zmiany dokładności czujnika.
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{sensor} -- Rodzaj czujnika}
+   \item{
+\texttt{accuracy} -- Dokładność}
+  \end{itemize}
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{onActivityResult(int, int, Intent)}
+\hypertarget{com.example.kostkadogry.MainActivity.onActivityResult(int, int, Intent)}{{\bf  onActivityResult}\\}
+\texttt{public void\ {\bf  onActivityResult}(\texttt{int} {\bf  requestCode},
+\texttt{int} {\bf  resultCode},
+\texttt{Intent} {\bf  data})
+\label{com.example.kostkadogry.MainActivity.onActivityResult(int, int, Intent)}}%end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Obsługuje zdarzenie zatwierdzenia ustawień w oknie Ustawienia. Skutkiem jest ustawienie liczby ścian (rodzaju kostki) wybranej przez użytkownika kostki do gry oraz przekazanie informacji o zakresie losowanych liczb.
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{requestCode} -- Kod żądania}
+   \item{
+\texttt{resultCode} -- Kod odpowiedzi}
+   \item{
+\texttt{data} -- Dane z okna Ustawienia}
+  \end{itemize}
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{onAddDie(View)}
+\hypertarget{com.example.kostkadogry.MainActivity.onAddDie(View)}{{\bf  onAddDie}\\}
+\texttt{public void\ {\bf  onAddDie}(\texttt{View} {\bf  view})
+\label{com.example.kostkadogry.MainActivity.onAddDie(View)}}%end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Obsługuje procedurę dodawania kostek. Dodanie kostki skutkuje odsłonięciem wartości liczbowej, zakresu liczb i ilustracji przedstawiającej wartość na kostce oraz wyświetleniem komunikatu dla użytkownika.
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{view} -- Bieżący widok (okno) programu.}
+  \end{itemize}
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{onButtonClick(View)}
+\hypertarget{com.example.kostkadogry.MainActivity.onButtonClick(View)}{{\bf  onButtonClick}\\}
+\texttt{public void\ {\bf  onButtonClick}(\texttt{View} {\bf  view})
+\label{com.example.kostkadogry.MainActivity.onButtonClick(View)}}%end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Obsługuje zdarzenie naciśnięcia na przycisk „Losuj”.
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{view} -- Bieżący widok (okno) programu}
+  \end{itemize}
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{onCreate(Bundle)}
+\hypertarget{com.example.kostkadogry.MainActivity.onCreate(Bundle)}{{\bf  onCreate}\\}
+\texttt{protected void\ {\bf  onCreate}(\texttt{Bundle} {\bf  savedInstanceState})
+\label{com.example.kostkadogry.MainActivity.onCreate(Bundle)}}%end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Funkcja odpowiada za obsługę uruchomienia programu.
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{Stan} -- instancji klasy (programu)}
+  \end{itemize}
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{onCreateOptionsMenu(Menu)}
+\hypertarget{com.example.kostkadogry.MainActivity.onCreateOptionsMenu(Menu)}{{\bf  onCreateOptionsMenu}\\}
+\texttt{public boolean\ {\bf  onCreateOptionsMenu}(\texttt{Menu} {\bf  menu})
+\label{com.example.kostkadogry.MainActivity.onCreateOptionsMenu(Menu)}}%end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Tworzy menu programu i wyświetla je na żądanie użytkownika.
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{menu} -- Menu programu}
+  \end{itemize}
+}%end item
+\item{{\bf  Returns} -- 
+Wartość \texttt{\small true} 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{onOptionsItemSelected(MenuItem)}
+\hypertarget{com.example.kostkadogry.MainActivity.onOptionsItemSelected(MenuItem)}{{\bf  onOptionsItemSelected}\\}
+\texttt{public boolean\ {\bf  onOptionsItemSelected}(\texttt{MenuItem} {\bf  item})
+\label{com.example.kostkadogry.MainActivity.onOptionsItemSelected(MenuItem)}}%end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Funkcja obsługuje zdarzenie wybrania pozycji w menu aplikacji. Wybranie pozycji w menu skutkuje uruchomieniem wskazanego okna (widoku).
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{item} -- Pozycja w menu}
+  \end{itemize}
+}%end item
+\item{{\bf  Returns} -- 
+Stwierdzenie wyboru opcji 
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{onPause()}
+\hypertarget{com.example.kostkadogry.MainActivity.onPause()}{{\bf  onPause}\\}
+\texttt{protected void\ {\bf  onPause}()
+\label{com.example.kostkadogry.MainActivity.onPause()}}%end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Obsługuje zdarzenie przejścia programu do działania w tle.
+}
+\end{itemize}
+}%end item
+\item{ 
+\index{onRemoveDie(View)}
+\hypertarget{com.example.kostkadogry.MainActivity.onRemoveDie(View)}{{\bf  onRemoveDie}\\}
+\texttt{public void\ {\bf  onRemoveDie}(\texttt{View} {\bf  view})
+\label{com.example.kostkadogry.MainActivity.onRemoveDie(View)}}%end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Obsługuje procedurę usuwania kostek. Dodanie kostki skutkuje zasłonięciem wartości liczbowej, zakresu liczb i ilustracji przedstawiającej wartość na kostce oraz wyświetleniem komunikatu dla użytkownika.
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{view} -- Bieżący widok (okno) programu.}
+  \end{itemize}
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{onResume()}
+\hypertarget{com.example.kostkadogry.MainActivity.onResume()}{{\bf  onResume}\\}
+\texttt{protected void\ {\bf  onResume}()
+\label{com.example.kostkadogry.MainActivity.onResume()}}%end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Obsługuje zdarzenie ponownego uruchomienia programu.
+}
+\end{itemize}
+}%end item
+\item{ 
+\index{onSensorChanged(SensorEvent)}
+\hypertarget{com.example.kostkadogry.MainActivity.onSensorChanged(SensorEvent)}{{\bf  onSensorChanged}\\}
+\texttt{public void\ {\bf  onSensorChanged}(\texttt{SensorEvent} {\bf  event})
+\label{com.example.kostkadogry.MainActivity.onSensorChanged(SensorEvent)}}%end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Obsługuje zdarzenie zmiany stanu akcelerometru. Losowanie liczby zostanie wywołane, jeżeli bieżące wartości przyspieszeń w osiach X, Y, Z będą większe niż wartość zmiennej NOISE.
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{event} -- Zdarzenie związane z czujnikiem}
+  \end{itemize}
+}%end item
+\end{itemize}
+}%end item
+\end{itemize}
+}
+}
+\subsection{\label{com.example.kostkadogry.Ustawienia}Class Ustawienia}{
+\hypertarget{com.example.kostkadogry.Ustawienia}{}\vskip .1in 
+Klasa implementująca widok ustawień. Widok wywoływany po naciśnięciu na jedną z widocznych kostek.\vskip .1in 
+\subsubsection{Declaration}{
+\small public class Ustawienia
+\\ {\bf  extends} Activity
+\refdefined{.Activity}}
+\subsubsection{Constructor summary}{
+\begin{verse}
+\hyperlink{com.example.kostkadogry.Ustawienia()}{{\bf Ustawienia()}} \\
+\end{verse}
+}
+\subsubsection{Method summary}{
+\begin{verse}
+\hyperlink{com.example.kostkadogry.Ustawienia.onCreate(Bundle)}{{\bf onCreate(Bundle)}} Metoda obsługuje zdarzenie tworzenia instancji klasy (tworzenia obiektu widoku).\\
+\hyperlink{com.example.kostkadogry.Ustawienia.onCreateOptionsMenu(Menu)}{{\bf onCreateOptionsMenu(Menu)}} \\
+\hyperlink{com.example.kostkadogry.Ustawienia.onSetClick(View)}{{\bf onSetClick(View)}} Obsługuje zdarzenie naciśnięcia na przycisk Ustaw.\\
+\end{verse}
+}
+\subsubsection{Constructors}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{Ustawienia()}
+\hypertarget{com.example.kostkadogry.Ustawienia()}{{\bf  Ustawienia}\\}
+\texttt{public\ {\bf  Ustawienia}()
+\label{com.example.kostkadogry.Ustawienia()}}%end signature
+}%end item
+\end{itemize}
+}
+\subsubsection{Methods}{
+\vskip -2em
+\begin{itemize}
+\item{ 
+\index{onCreate(Bundle)}
+\hypertarget{com.example.kostkadogry.Ustawienia.onCreate(Bundle)}{{\bf  onCreate}\\}
+\texttt{protected void\ {\bf  onCreate}(\texttt{Bundle} {\bf  savedInstanceState})
+\label{com.example.kostkadogry.Ustawienia.onCreate(Bundle)}}%end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Metoda obsługuje zdarzenie tworzenia instancji klasy (tworzenia obiektu widoku).
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{savedInstanceState} -- Stan klasy}
+  \end{itemize}
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{onCreateOptionsMenu(Menu)}
+\hypertarget{com.example.kostkadogry.Ustawienia.onCreateOptionsMenu(Menu)}{{\bf  onCreateOptionsMenu}\\}
+\texttt{public boolean\ {\bf  onCreateOptionsMenu}(\texttt{Menu} {\bf  menu})
+\label{com.example.kostkadogry.Ustawienia.onCreateOptionsMenu(Menu)}}%end signature
+\begin{itemize}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{menu} -- Menu programu}
+  \end{itemize}
+}%end item
+\end{itemize}
+}%end item
+\item{ 
+\index{onSetClick(View)}
+\hypertarget{com.example.kostkadogry.Ustawienia.onSetClick(View)}{{\bf  onSetClick}\\}
+\texttt{public void\ {\bf  onSetClick}(\texttt{View} {\bf  view})
+\label{com.example.kostkadogry.Ustawienia.onSetClick(View)}}%end signature
+\begin{itemize}
+\item{
+{\bf  Description}
+
+Obsługuje zdarzenie naciśnięcia na przycisk Ustaw.
+}
+\item{
+{\bf  Parameters}
+  \begin{itemize}
+   \item{
+\texttt{view} -- Bieżący widok}
+  \end{itemize}
+}%end item
+\end{itemize}
+}%end item
+\end{itemize}
+}
+}
+}
+\end{document}

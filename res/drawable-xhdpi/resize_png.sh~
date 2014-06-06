@@ -1,0 +1,5 @@
+#! /bin/sh
+
+for f in `ls *.png`; do
+	convert -resize 50% $f -flatten ${f%.*}.png;
+done 
